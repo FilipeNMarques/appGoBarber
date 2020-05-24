@@ -14,11 +14,11 @@ const SignIn: React.FC = () => {
     <Container>
       <Image source={logoImg} />
       <Title>Faça seu login</Title>
-      <Input />
-      <Input />
+      <Input name="email" icon="mail" placeholder="Seu email" />
+      <Input name="password" icon="lock" placeholder="Sua senha" />
       <Button
         onPress={() => {
-          console.log('FOi (>');
+          console.log('Foi (>');
         }}
       >
         Entrar
