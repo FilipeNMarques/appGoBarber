@@ -10,7 +10,7 @@ export const Container = styled.View`
   flex-direction: row;
   align-items: center;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 `;
 
 export const Icon = styled(FeatherIcon)`

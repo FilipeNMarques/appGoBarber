@@ -8,6 +8,9 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
+// Navigation
+import { useNavigation } from '@react-navigation/native';
+
 // Assets
 import logoImg from '../../assets/logo.png';
 // Components
@@ -24,6 +27,8 @@ import {
 } from './styles';
 
 const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <>
       <KeyboardAvoidingView
@@ -38,7 +43,7 @@ const SignIn: React.FC = () => {
           <Container>
             <Image source={logoImg} />
             <View>
-              <Title>Faça seu login</Title>
+              <Title>Faça seu logon</Title>
             </View>
             <Input name="email" icon="mail" placeholder="Seu email" />
             <Input name="password" icon="lock" placeholder="Sua senha" />
@@ -61,7 +66,7 @@ const SignIn: React.FC = () => {
       </KeyboardAvoidingView>
       <CreateAccountButton
         onPress={() => {
-          console.log('CreateAccount');
+          navigation.navigate('SignUp');
         }}
       >
         <Icon name="log-in" color="#ff9000" size={20} />
