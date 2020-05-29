@@ -16,6 +16,9 @@ import * as Yup from 'yup';
 // Navigation
 import { useNavigation } from '@react-navigation/native';
 
+// Services
+import api from '../../services/api';
+
 // Assets
 import logoImg from '../../assets/logo.png';
 // Components
@@ -51,8 +54,12 @@ const SignUp: React.FC = () => {
         abortEarly: false,
       });
 
-      // await api.post('/users', data);
-      // history.push('/');
+      await api.post('/users', data);
+      Alert.alert(
+        'Cadastro realizado com sucesso!',
+        'Você já pode fazer logon na plataforma',
+      );
+      navigation.goBack();
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErrors(err);
