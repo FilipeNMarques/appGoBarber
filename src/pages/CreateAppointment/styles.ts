@@ -15,8 +15,8 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  padding-top: ${getStatusBarHeight() + 24}px;
   padding: 24px;
+  padding-top: ${getStatusBarHeight() + 24}px;
   background: #28262e;
 
   flex-direction: row;
@@ -63,4 +63,28 @@ export const ProviderName = styled.Text<ProviderNameProps>`
   color: ${props => (props.selected ? '#232129' : '#f4ede8')};
   font-size: 16px;
   font-family: 'RobotoSlab-Medium';
+`;
+
+export const Calendar = styled.View``;
+
+export const Title = styled.Text`
+  font-family: 'RobotoSlab-Medium';
+  font-size: 24px;
+  color: #f4ede8;
+  margin: 0 24px 24px;
+`;
+
+export const ShowDatePickerButton = styled(RectButton)`
+  height: 50px;
+  margin: 0 24px;
+  align-items: center;
+  justify-content: center;
+  background: #ff9000;
+  border-radius: 10px;
+`;
+
+export const ShowDatePickerButtonText = styled.Text`
+  font-family: 'RobotoSlab-Medium';
+  font-size: 16px;
+  color: #232129;
 `;
