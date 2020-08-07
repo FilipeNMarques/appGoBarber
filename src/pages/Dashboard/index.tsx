@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
@@ -44,8 +45,8 @@ const Dashboard: React.FC = () => {
   }, [signOut]);
 
   const navigateToCreateAppointment = useCallback(
-    (provider_id: string) => {
-      navigate('CreateAppointment', { provider_id });
+    (providerId: string) => {
+      navigate('CreateAppointment', { providerId });
     },
     [navigate],
   );
@@ -65,8 +66,9 @@ const Dashboard: React.FC = () => {
         keyExtractor={provider => provider.id}
         data={providers}
         ListHeaderComponent={
-          <ProvidersListTitle>Cabeleireiros</ProvidersListTitle>
+          <ProvidersListTitle>Profissionais</ProvidersListTitle>
         }
+        ListFooterComponent={<View style={{ marginBottom: 32 }} />}
         renderItem={({ item: provider }) => (
           <ProviderContainer
             onPress={() => navigateToCreateAppointment(provider.id)}
